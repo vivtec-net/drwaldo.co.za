@@ -1,0 +1,50 @@
+---
+import Meta from "../blocks/meta.astro";
+
+const { pathname } = Astro.url;
+const { title, description, image = "favicon.svg" } = Astro.props;
+---
+
+<html lang="en">
+	<Meta title={title} description={description} image={image} />
+	<body>
+		<nav>
+			<a href="/"><img src="./favicon.avif" alt="logo" width="128" height="128" /></a>
+			<ul>
+				<a href="#" aria-current={pathname === "/" ? "page" : "false"}>Home</a>
+			</ul>
+		</nav>
+		<main>
+			<slot />
+		</main>
+		<footer>Test</footer>
+	</body>
+</html>
+
+<style>
+	body {
+		display: grid;
+		grid:
+			"head" auto
+			"main" auto
+			"foot" auto / 1fr;
+
+		& > nav {
+			grid-area: head;
+		}
+		& > main {
+			grid-area: main;
+		}
+		& > footer {
+			grid-area: foot;
+		}
+	}
+	nav {
+		display: flex;
+
+		& > img {
+			min-inline-size: 200px;
+			aspect-ratio: 1 / 1;
+		}
+	}
+</style>
