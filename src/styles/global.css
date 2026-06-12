@@ -79,15 +79,16 @@
 		--fs-5: clamp(3.91rem, 2.38vi + 2.96rem, 6rem);
 		--fs-6: clamp(4.88rem, 3.54vi + 3.47rem, 8rem);
 	}
-
-	body {
-		font-family: "Times New Roman", Times, serif;
-	}
 }
 
 @layer theme {
-	nav {
-		background-color: red;
+	:root {
+		--colorPri: #e1e1d5;
+		--colorBody: #38443c;
+	}
+	body {
+		background: #f8f7f3;
+		color: var(--colorBody);
 	}
 }
 
