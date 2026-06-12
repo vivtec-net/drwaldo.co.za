@@ -9,11 +9,38 @@ const { title, description, image = "favicon.svg" } = Astro.props;
 	<Meta title={title} description={description} image={image} />
 	<body>
 		<nav>
-			<a href={import.meta.env.BASE_URL}>
+			<a class="logo" href={import.meta.env.BASE_URL}>
 				<img src={`${import.meta.env.BASE_URL}favicon.avif`} alt="logo" width="128" height="128" />
+				<hgroup>
+					<h1>Morvet Kleindiere</h1>
+					<span>Dr. Waldo Rossouw</span>
+				</hgroup>
 			</a>
-			<ul>
-				<a href="#" aria-current={pathname === "/" ? "page" : "false"}>Home</a>
+			<ul role="list">
+				<li role="listitem">
+					<a
+						href={`${import.meta.env.BASE_URL}`}
+						aria-current={pathname === `${import.meta.env.BASE_URL}` ? "page" : "false"}
+					>
+						Home
+					</a>
+				</li>
+				<li role="listitem">
+					<a
+						href={`${import.meta.env.BASE_URL}about/`}
+						aria-current={pathname === `${import.meta.env.BASE_URL}about/` ? "page" : "false"}
+					>
+						About
+					</a>
+				</li>
+				<li role="listitem">
+					<a
+						href={`${import.meta.env.BASE_URL}contact/`}
+						aria-current={pathname === `${import.meta.env.BASE_URL}contact/` ? "page" : "false"}
+					>
+						Contact
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<main>
@@ -28,7 +55,7 @@ const { title, description, image = "favicon.svg" } = Astro.props;
 		display: grid;
 		grid:
 			"head" auto
-			"main" auto
+			"main" 200svb
 			"foot" auto / 1fr;
 
 		& > nav {
@@ -41,12 +68,55 @@ const { title, description, image = "favicon.svg" } = Astro.props;
 			grid-area: foot;
 		}
 	}
-	nav {
-		display: flex;
 
-		& > img {
-			min-inline-size: 200px;
-			aspect-ratio: 1 / 1;
+	body {
+		background: #f8f5f0;
+	}
+
+	nav {
+		position: fixed;
+		inset: 0 0 auto 0;
+		background: #f8f7f3;
+		box-shadow: 0px 0px 3px 0 color-mix(in oklch, black, transparent 60%);
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem 3rem;
+		padding-inline: 2rem;
+
+		& > .logo {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+
+			& > img {
+				inline-size: 100px;
+				aspect-ratio: 1 / 1;
+				border-radius: 50%;
+			}
+
+			& > hgroup {
+				font-size: var(--fs-0);
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+
+		& > ul {
+			display: flex;
+			gap: 1em;
+			padding-inline: 2rem;
+
+			a {
+				display: block;
+				padding-inline: 1em;
+				padding-block: 0.5em;
+				background: var(--colorPri);
+				border-radius: 0.5em;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
 		}
 	}
 </style>
