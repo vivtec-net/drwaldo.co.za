@@ -8,8 +8,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://vivtec-net.github.io",
-	base: "/drwaldo.co.za",
+	site: "https://vivtec-net.github.io/drwaldo.co.za",
 	markdown: {
 		processor: satteri({
 			features: { directive: true },
