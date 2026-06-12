@@ -9,7 +9,9 @@ const { title, description, image = "favicon.svg" } = Astro.props;
 	<Meta title={title} description={description} image={image} />
 	<body>
 		<nav>
-			<a href="/"><img src="./favicon.avif" alt="logo" width="128" height="128" /></a>
+			<a href={import.meta.env.BASE_URL}>
+				<img src={`${import.meta.env.BASE_URL}favicon.avif`} alt="logo" width="128" height="128" />
+			</a>
 			<ul>
 				<a href="#" aria-current={pathname === "/" ? "page" : "false"}>Home</a>
 			</ul>
