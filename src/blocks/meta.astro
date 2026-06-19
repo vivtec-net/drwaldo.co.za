@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-const { title, description, image = "favicon.svg" } = Astro.props;
+const { title, description, image = `${import.meta.env.BASE_URL}favicon.avif` } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
