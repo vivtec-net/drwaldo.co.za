@@ -7,7 +7,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://vivtec-net.github.io",
-	base: "/",
+	base: "/drwaldo.co.za/",
 	trailingSlash: "always",
 	markdown: {
 		processor: satteri({
