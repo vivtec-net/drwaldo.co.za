@@ -36,7 +36,7 @@ const { title, description, image = `${import.meta.env.BASE_URL}images/placehold
 		<main>
 			<slot />
 		</main>
-		<footer>Test</footer>
+		<footer>Being developed by <strong><a href="https://vivtec.co.za" target="_blank">VIVTEC</a></strong></footer>
 	</body>
 </html>
 
@@ -45,8 +45,9 @@ const { title, description, image = `${import.meta.env.BASE_URL}images/placehold
 		display: grid;
 		grid:
 			"head" auto
-			"main" 200svb
+			"main" 1fr
 			"foot" auto / 1fr;
+		background: #f8f5f0;
 
 		& > nav {
 			grid-area: head;
@@ -59,11 +60,9 @@ const { title, description, image = `${import.meta.env.BASE_URL}images/placehold
 		}
 	}
 
-	body {
-		background: #f8f5f0;
-	}
-
 	nav {
+		position: sticky;
+		inset: 0 auto auto auto;
 		background: #f8f7f3;
 		box-shadow: 0px 0px 3px 0 color-mix(in oklch, black, transparent 60%);
 		display: flex;
@@ -72,6 +71,7 @@ const { title, description, image = `${import.meta.env.BASE_URL}images/placehold
 		justify-content: space-between;
 		gap: 1rem 3rem;
 		padding-inline: 2rem;
+		overflow-x: scroll;
 
 		& > .logo {
 			display: flex;
@@ -106,5 +106,16 @@ const { title, description, image = `${import.meta.env.BASE_URL}images/placehold
 				font-weight: bold;
 			}
 		}
+	}
+	main {
+		display: grid;
+		place-items: center;
+	}
+
+	footer {
+		display: grid;
+		place-items: center;
+		padding-inline: 1em;
+		padding-block: 0.5em;
 	}
 </style>
