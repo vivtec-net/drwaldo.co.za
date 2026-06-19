@@ -4,7 +4,7 @@ import "../styles/global.css";
 const {
 	title,
 	description,
-	image = `${import.meta.env.BASE_URL}favicon.avif`,
+	image = `${import.meta.env.BASE_URL}images/favicon.avif`,
 	favicon = `${import.meta.env.BASE_URL}favicon.avif`,
 	sitemap = `${import.meta.env.BASE_URL}sitemap-index.xml`,
 } = Astro.props;
@@ -33,7 +33,7 @@ const sitemapURL = new URL(sitemap, Astro.url);
 	<meta property="og:image" content={imageURL} />
 
 	<link rel="canonical" href={canonicalURL} />
-	<link rel="icon" type="image/svg+xml" href={faviconURL} />
+	<link rel="icon" type="image/avif" href={faviconURL} />
 	<link rel="sitemap" type="application/xml" title="Sitemap" href={sitemapURL} />
 
 	<meta name="description" content={description} />
