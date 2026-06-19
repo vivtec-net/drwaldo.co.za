@@ -10,8 +10,8 @@ const { title, description, image = "favicon.svg" } = Astro.props;
 	<Meta title={title} description={description} image={image} />
 	<body>
 		<nav>
-			<Link class="logo" href="/">
-				<img src={`${import.meta.env.BASE_URL}/favicon.avif`} alt="logo" width="128" height="128" />
+			<Link class="logo" href="">
+				<img src={`${import.meta.env.BASE_URL}favicon.avif`} alt="logo" width="128" height="128" />
 				<hgroup>
 					<h1>Morvet Kleindiere</h1>
 					<span>Dr. Waldo Rossouw</span>
@@ -19,15 +19,15 @@ const { title, description, image = "favicon.svg" } = Astro.props;
 			</Link>
 			<ul role="list">
 				<li role="listitem">
-					<Link href="/" aria-current={pathname === `${import.meta.env.BASE_URL}/` ? "page" : "false"}> Home </Link>
+					<Link href="" aria-current={pathname === `${import.meta.env.BASE_URL}` ? "page" : "false"}> Home </Link>
 				</li>
 				<li role="listitem">
-					<Link href="/about/" aria-current={pathname === `${import.meta.env.BASE_URL}/about/` ? "page" : "false"}>
+					<Link href="about/" aria-current={pathname === `${import.meta.env.BASE_URL}about/` ? "page" : "false"}>
 						About
 					</Link>
 				</li>
 				<li role="listitem">
-					<Link href="/contact/" aria-current={pathname === `${import.meta.env.BASE_URL}/contact/` ? "page" : "false"}>
+					<Link href="contact/" aria-current={pathname === `${import.meta.env.BASE_URL}contact/` ? "page" : "false"}>
 						Contact
 					</Link>
 				</li>
