@@ -94,35 +94,86 @@
 }
 
 @layer blocks {
-	.opening-hours {
+	section > .wrapper {
+		inline-size: min(calc(100% - 2em), 1340px);
+		margin-inline: auto;
 		display: grid;
 		gap: 2em;
-		inline-size: min(calc(100% - 2rem), 400px);
-		margin-inline: auto;
-		margin-block-start: 2rem;
-		background-color: var(--colorBody);
-		color: canvas;
-		border-radius: 2rem;
-		padding: 2rem;
+	}
 
-		& > div {
+	section:has(.hero) {
+		inline-size: 100%;
+		isolation: isolate;
+
+		.hero {
 			display: grid;
-			grid:
-				"day time-am" auto
-				"day time-pm" auto / 1fr 1fr;
-			place-items: center start;
+			grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+			place-items: center;
+			gap: 2em;
 		}
 
-		dt {
-			grid-area: day;
-			text-align: left;
+		.hero-image {
+			inline-size: 90%;
+			position: relative;
+			--radius: 10em 3em 10em 3em;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: var(--radius);
+				z-index: -1;
+				box-shadow: 0px 0px 0px 5px #ffffff30;
+			}
+
+			&::before {
+				translate: 5% -5%;
+				rotate: -15deg;
+				background: #e1e1d5;
+			}
+
+			&::after {
+				translate: -5% 5%;
+				rotate: 15deg;
+				background: #38443c;
+			}
+
+			img {
+				border-radius: var(--radius);
+				box-shadow: 0px 0px 10px 5px #00000080;
+			}
 		}
 
-		dd:nth-of-type(1) {
-			grid-area: time-am;
-		}
-		dd:nth-of-type(2) {
-			grid-area: time-pm;
+		.opening-hours {
+			display: grid;
+			gap: 1em;
+			inline-size: 100%;
+			margin-inline: auto;
+			background-color: var(--colorBody);
+			color: canvas;
+			border-radius: 2rem;
+			padding: 2rem;
+
+			& > div {
+				display: grid;
+				grid:
+					"day time-am" auto
+					"day time-pm" auto / 1fr 1fr;
+				place-items: center start;
+			}
+
+			dt {
+				grid-area: day;
+				text-align: left;
+			}
+
+			dd:nth-of-type(1) {
+				grid-area: time-am;
+			}
+			dd:nth-of-type(2) {
+				grid-area: time-pm;
+			}
 		}
 	}
 }
