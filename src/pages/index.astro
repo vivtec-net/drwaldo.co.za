@@ -1,45 +1,60 @@
 ---
+import { Image } from "astro:assets";
+
 import LayoutDefault from "../layouts/layoutdefault.astro";
 
-const title = "Home";
+import heroImage from "../images/hero.avif";
+
+const title = "Morvet Kleindiere - Home";
 const description = "My Description";
 ---
 
 <LayoutDefault title={title} description={description}>
-	<h1>Coming Soon</h1>
-	<dl class="opening-hours">
-		<div>
-			<dt>Monday</dt>
-			<dd>08:00 – 10:00</dd>
-			<dd>12:00 – 16:45</dd>
+	<section>
+		<div class="wrapper">
+			<h1 style="text-align: center;">WIP</h1>
+			<div class="hero">
+				<div class="hero-image">
+					<Image src={heroImage} alt="staff" width="720" height="520" />
+				</div>
+				<div class="time">
+					<dl class="opening-hours">
+						<div>
+							<dt>Monday</dt>
+							<dd>08:00 – 10:00</dd>
+							<dd>12:00 – 16:45</dd>
+						</div>
+						<div>
+							<dt>Tuesday</dt>
+							<dd>08:00 – 10:00</dd>
+							<dd>12:00 – 16:45</dd>
+						</div>
+						<div>
+							<dt>Wednesday</dt>
+							<dd>08:00 – 10:00</dd>
+							<dd>12:00 – 16:45</dd>
+						</div>
+						<div>
+							<dt>Thursday</dt>
+							<dd>08:00 – 10:00</dd>
+							<dd>12:00 – 16:45</dd>
+						</div>
+						<div>
+							<dt>Friday</dt>
+							<dd>08:00 – 10:00</dd>
+							<dd>12:00 – 16:45</dd>
+						</div>
+						<div>
+							<dt>Saturday</dt>
+							<dd>08:00 – 11:30</dd>
+						</div>
+						<div>
+							<dt>Sunday</dt>
+							<dd>Closed</dd>
+						</div>
+					</dl>
+				</div>
+			</div>
 		</div>
-		<div>
-			<dt>Tuesday</dt>
-			<dd>08:00 – 10:00</dd>
-			<dd>12:00 – 16:45</dd>
-		</div>
-		<div>
-			<dt>Wednesday</dt>
-			<dd>08:00 – 10:00</dd>
-			<dd>12:00 – 16:45</dd>
-		</div>
-		<div>
-			<dt>Thursday</dt>
-			<dd>08:00 – 10:00</dd>
-			<dd>12:00 – 16:45</dd>
-		</div>
-		<div>
-			<dt>Friday</dt>
-			<dd>08:00 – 10:00</dd>
-			<dd>12:00 – 16:45</dd>
-		</div>
-		<div>
-			<dt>Saturday</dt>
-			<dd>08:00 – 11:50</dd>
-		</div>
-		<div>
-			<dt>Sunday</dt>
-			<dd>Closed</dd>
-		</div>
-	</dl>
+	</section>
 </LayoutDefault>
